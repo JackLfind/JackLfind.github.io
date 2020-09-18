@@ -2,8 +2,8 @@
   <img alt="Fluid Logo" src="https://avatars2.githubusercontent.com/t/3419353?s=280&v=4" width="128">
 </p>
 
-<p align="center">一款 Material Design 风格的主题</p>
-<p align="center">An elegant Material-Design theme for Hexo</p>
+<p align="center">红笺小字，说尽平生意。</p>
+<p align="center">红笺小字，说尽平生意。</p>
 
 ![ScreenShot](https://cdn.jsdelivr.net/gh/fluid-dev/static@master/hexo-theme-fluid/screenshots/index.png)
 
