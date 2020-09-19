@@ -302,8 +302,10 @@
     
   </div>
   <div>
+  <center>
   <span id="timeDate">载入天数...</span>
   <span id="times">载入时分秒...</span>
+  </center>
   <script>
   var now = new Date();
   function createtime(){
@@ -333,7 +335,7 @@
   </script>
 </div>
 
-<p id="hitokoto">:D 获取中...</p>
+<center><p id="hitokoto">:D 获取中...</p></center>
 <script>
   fetch('https://v1.hitokoto.cn')
     .then(response => response.json())

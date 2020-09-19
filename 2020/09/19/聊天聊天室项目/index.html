@@ -194,6 +194,14 @@
 
   
   
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
 </div>
 
             
@@ -355,8 +363,10 @@
     
   </div>
   <div>
+  <center>
   <span id="timeDate">载入天数...</span>
   <span id="times">载入时分秒...</span>
+  </center>
   <script>
   var now = new Date();
   function createtime(){
@@ -386,7 +396,7 @@
   </script>
 </div>
 
-<p id="hitokoto">:D 获取中...</p>
+<center><p id="hitokoto">:D 获取中...</p></center>
 <script>
   fetch('https://v1.hitokoto.cn')
     .then(response => response.json())
