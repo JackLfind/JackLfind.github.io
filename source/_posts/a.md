@@ -24,12 +24,12 @@ ref
 ref函数接一个参数返回一个响应式的ref对象
 直接看栗子
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>
       {{num}}
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref } from "vue";
 export default {
   setup() {
@@ -38,7 +38,7 @@ export default {
   },
 };
 </srcript>
-<br></textarea></br>
+</xmp>
 也即和vue2.x中的这种写法是一样的
 data(){
     return {
@@ -53,10 +53,10 @@ reactive
 ref负责简单数据数据，则reactive就是将引用类型的数据进行响应式化
 直接看栗子
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>{{num}}{{obj.name}}</div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref, reactive } from "vue";
 export default {
   setup() {
@@ -69,7 +69,7 @@ export default {
   },
 };
 </srcript>
-<br></textarea></br>
+</xmp>
 
 上面的ref对象自动解套的另一种情况也即在这里它作为reactive函数参数对象的一属性
 即:
@@ -84,15 +84,16 @@ const obj = reactive({
 readonly
 这个函数，参数可以一个响应式或者普通的对象再或者是个ref。返回的是一个只读代理（深层的）
 栗子
+![](1.png)
 computed 与 watch
 computed
 computed是一个函数，它需要传一个getter函数。其返回值是一个不可手动修改的ref对象
 栗子
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>{{num2}}</div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref, reactive, computed } from "vue";
 export default {
   setup() {
@@ -107,7 +108,7 @@ export default {
   },
 };
 </srcript>
-<br></textarea></br>
+</xmp>
 
 注意不可修改
 如
@@ -116,10 +117,10 @@ export default {
 
 
 想要一个可以进行修改的，就需传一个具有get和set函数的对象
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>{{num2.value}}</div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref, reactive, computed } from "vue";
 export default {
   setup() {
@@ -138,15 +139,15 @@ export default {
     return { num, obj, num2 };
   },
 };
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 要注意的是，此时num2这个ref对象不会在自动解套了
 watch
 监听一个
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>{{num2.value}}</div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref, reactive, computed, watch } from "vue";
 export default {
   setup() {
@@ -169,15 +170,15 @@ export default {
     return { obj };
   },
 };
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 
 第一参除了可以是上面那种有返回值的getter函数，也可以是一个ref对象
 即
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div></div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref, reactive, computed, watch } from "vue";
 export default {
   setup() {
@@ -197,15 +198,15 @@ export default {
     return { obj };
   },
 };
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 
 监听多个
 即如下只要num或obj.name有一个发生变动就触发监听器处理回调
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div></div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref, reactive, computed, watch } from "vue";
 export default {
   setup() {
@@ -226,7 +227,7 @@ export default {
     return { obj };
   },
 };
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 生命周期钩子
 栗子
@@ -281,10 +282,10 @@ this
 Refs
 如拿下面这个节点
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div ref="test">test</div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import {
   ref,
   reactive,
@@ -304,19 +305,19 @@ export default {
     return { test };
   },
 };
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 
 一些工具函数
 先来写下破坏reactive生成的响应对象代理的栗子
 首先正常写法
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div ref="test">
     {{obj.age}}
     <button @click="obj.age++">add</button>
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref, reactive, computed, watch, provide, inject, readonly } from "vue";
 export default {
   props: {
@@ -334,17 +335,17 @@ export default {
     return { obj };
   },
 };
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 
 使用扩展语法
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div ref="test">
     {{age}}
     <button @click="age++">add</button>
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref, reactive, computed, watch, provide, inject, readonly } from "vue";
 export default {
   props: {
@@ -362,17 +363,17 @@ export default {
     return { ...obj };
   },
 };
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 
 解构出来的同样不行
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div ref="test">
     {{age}}
     <button @click="age++">add</button>
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref, reactive, computed, watch, provide, inject, readonly } from "vue";
 export default {
   props: {
@@ -389,7 +390,7 @@ export default {
     return { age };
   },
 };
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 这个的原理也很简单，reactive的内部原理是Proxy，它操作均在返回的代理实例上
 下面开始介绍几个工具函数
@@ -407,13 +408,13 @@ toRef，即把reactive 对象上的一个属性变成ref
 什么意思呢，还是看上面的破坏了响应式的栗子
 修复一下(即可把它一个属性抽出来做成响应式的ref，且它们还是互相关联的)
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div ref="test">
     {{age}}
     <button @click="age++">add</button>
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import {
   ref,
   reactive,
@@ -441,17 +442,17 @@ export default {
   },
 };
 </srcript>
-<br></textarea></br>
+</xmp>
 
 toRefs则是把这个对象里面的所有属性均整成ref，这个修复则更简单了
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div ref="test">
     {{age}}
     <button @click="age++">add</button>
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import {
   ref,
   reactive,
@@ -477,28 +478,28 @@ export default {
     return { ...obj02 };
   },
 };
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 <h2>1.2. Teleport</h2>
 传送门，顾名思义
 场景：某一些组件中我们可能需要一个模态框的功能，然而虽然逻辑上来说这个模态框是属于该组件中的，但是实际操作一般需要把这个框子挂到body上。Teleport 组件就是帮我们处理这个问题的
 来看栗子
 假设组件中需要有一个模态框
-<br><textarea></br><srcript>
+<xmp><srcript>
     <div>
         <model></model>
     </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import Model from './model'
 export default {
     components:{Model}
 }
 </srcript>
-<br></textarea></br>
+</xmp>
 模态框组件
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>
     <button @click="flag=true">点击</button>
     <teleport to="body">
@@ -507,8 +508,8 @@ export default {
       </div>
     </teleport>
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref } from "vue";
 export default {
   setup() {
@@ -517,7 +518,7 @@ export default {
   },
 };
 </srcript>
-<br></textarea></br>
+</xmp>
 即teleport组件的作用就是把teleport标签里面的元素传送到body上去
 
 再看层级
@@ -526,15 +527,15 @@ export default {
 这个的理解就更简单了
 原来只能这样:即只允许存在一个最外层的父元素div
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>
     ...
   </div>
-<br></textarea></br></template>
-<br></textarea></br>
+</xmp></template>
+</xmp>
 现在可多个
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>
     ...
   </div>
@@ -542,51 +543,51 @@ export default {
     ...
   </div>
     ...
-<br></textarea></br></template>
-<br></textarea></br>
+</xmp></template>
+</xmp>
 <h2>1.4. Emits Component Option</h2>
 <h3>1.4.1 自定义事件派发</h3>
 这里的重点：即多了一个派发事件的选项emits
 也就我们以后再次使用emit派发一个事件的时候需要把这此派发的事件名放到选项里
 栗子:
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>
     <button @click="$emit('test')">点击</button>
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 export default {
   emits: ["test"],
 };
 </srcript>
-<br></textarea></br>
+</xmp>
 注意：这里如果你派发的是一个原生事件，且没有把此事件放进emits选项中，其父组件的监听会被触发两次
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>
     <button @click="$emit('click')">点击</button>
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 export default {
 //   emits: ["click"],
 };
 </srcript>
-<br></textarea></br>
+</xmp>
 
 <h3>1.4.2 v-model</h3>
 vue3中的v-model,所借助的属性是 modelValue  所借助的事件是 update:modelValue (且3中把sync移出掉了)
 栗子
 父组件
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div id="nav">
     {{data}}
     <test05 v-model="data"></test05>
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 import { ref } from "vue";
 import Test05 from "./components/test05";
 export default {
@@ -597,22 +598,22 @@ export default {
   },
 };
 </srcript>
-<br></textarea></br>
+</xmp>
 子组件
 
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>
     <input type="text" :value="modelValue" @input="$emit('update:modelValue',$event.target.value)" />
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 export default {
     props:{
         modelValue:String
     },
     emits:['update:modelValue']
 }
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 自定义属性名，vue2.x中可通过 model选项  指定传过来的属性名和指定本次v-model要利用的事件。 vue3中也可自定属性
 栗子
@@ -620,19 +621,19 @@ export default {
 <test05 v-model:foo="data"></test05>
 
 子组件
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>
     <input type="text" :value="foo" @input="$emit('update:foo',$event.target.value)" />
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 export default {
     props:{
         foo:String
     },
     emits:['update:foo']
 }
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 一个组件中可写多个v-model指令
 栗子：
@@ -640,13 +641,13 @@ export default {
  <test01 v-model:foo="a" v-model:bar="b"></test01>
 
 子组件
-<br><textarea></br><srcript>
+<xmp><srcript>
   <div>
     <input type="text" :value="foo" @input="$emit('update:foo',$event.target.value)" />
     <input type="text" :value="bar" @input="$emit('update:bar',$event.target.value)" />
   </div>
-<br></textarea></br></template>
-<br><textarea></br><srcript>
+</xmp></template>
+<xmp><srcript>
 export default {
   props: {
     foo: String,
@@ -657,7 +658,7 @@ export default {
     return {};
   },
 };
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 <h2>1.5. createRendererAPI</h2>
 自定义渲染器字如其名，它的主要功能是我们可以自定义 Virtual DOM 到DOM的方式，看了好3、4个大佬的栗子都是用canvas画了图。自己这里想不出什么栗子来先不写了
@@ -740,34 +741,34 @@ export default DynamicHeading
 
 单文件形式对比
 2.x
-// Vue 2 Functional Component Example with <br><textarea></br><srcript>
+// Vue 2 Functional Component Example with <xmp><srcript>
 <template functional>
   <component
     :is="`h${props.level}`"
     v-bind="attrs"
     v-on="listeners"
   />
-<br></textarea></br></template>
+</xmp></template>
 
-<br><textarea></br><srcript>
+<xmp><srcript>
 export default {
   props: ['level']
 }
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 3.0,区别去掉了functional,监听器放进了$attrs且可删除
-<br><textarea></br><srcript>
+<xmp><srcript>
   <component
     v-bind:is="`h${props.level}`"
     v-bind="$attrs"
   />
-<br></textarea></br></template>
+</xmp></template>
 
-<br><textarea></br><srcript>
+<xmp><srcript>
 export default {
   props: ['level']
 }
-<br></textarea></br></srcript>
+</srcript></xmp>
 
 异步组件
 原来异步组件咋整的呢
@@ -829,7 +830,7 @@ createApp(App)
   class: ['button', 'is-outlined'],
   style: { color: '#34495E' },
   attrs: { id: 'submit' },
-  domProps: { innertextarea: '' },
+  domProps: { innerxmp: '' },
   on: { click: submitForm },
   key: 'submit-button'
 }
@@ -839,7 +840,7 @@ createApp(App)
   class: ['button', 'is-outlined'],
   style: { color: '#34495E' },
   id: 'submit',
-  innertextarea: '',
+  innerxmp: '',
   onClick: submitForm,
   key: 'submit-button'
 }
@@ -848,17 +849,17 @@ createApp(App)
 废掉了$scopedSlots，使用$slots
 vue2.x中，一个组件使用渲染函数拿插槽是这样的
 
-<br><textarea></br><srcript>
+<xmp><srcript>
 export default {
     render(h) {
         return h('div',{},this.$scopedSlots.default)
     },
 }
 </srcript>
-<br></textarea></br>
+</xmp>
 vue3.x中则是这样的
-<br></textarea></br>
-<br><textarea></br><srcript>
+</xmp>
+<xmp><srcript>
 import {h} from 'vue'
 export default {
     props:{
@@ -869,7 +870,7 @@ export default {
     },
 }
 </srcript>
-<br></textarea></br>
+</xmp>
 
 
 <h2>2.5 Custom Elements</h2>
