@@ -3,7 +3,7 @@ layout:
   - post
 title: excel常用公式
 date: 2020-09-21 20:18:49
-tags:useful
+tags: useful
 ---
 1、IF函数条件判断
 IF函数是最常用的判断类函数之一，能完成非此即彼的判断。
