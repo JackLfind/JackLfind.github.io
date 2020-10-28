@@ -1,0 +1,676 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="JackLfind">
+  <meta name="keywords" content="">
+  <title>32个js问题 - sky</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Sky</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-09-22 21:49" pubdate>
+        2020年9月22日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      64
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">32个js问题</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <p>01.数组扁平化<br>数组扁平化是指将一个多维数组变为一个一维数组<br>const arr = [1, [2, [3, [4, 5]]], 6];<br>// =&gt; [1, 2, 3, 4, 5, 6]</p>
+<p>方法一：使用flat()<br>const res1 = arr.flat(Infinity);</p>
+<p>方法二：利用正则<br>const res2 = JSON.stringify(arr).replace(/[|]/g, ‘’).split(‘,’);</p>
+<p>但数据类型都会变为字符串<br>方法三：正则改良版本<br>const res3 = JSON.parse(‘[‘ + JSON.stringify(arr).replace(/[|]/g, ‘’) + ‘]’);</p>
+<p>方法四：使用reduce<br>const flatten = arr =&gt; {<br>  return arr.reduce((pre, cur) =&gt; {<br>    return pre.concat(Array.isArray(cur) ? flatten(cur) : cur);<br>  }, [])<br>}<br>const res4 = flatten(arr);</p>
+<p>方法五：函数递归<br>const res5 = [];<br>const fn = arr =&gt; {<br>  for (let i = 0; i &lt; arr.length; i++) {<br>    if (Array.isArray(arr[i])) {<br>      fn(arr[i]);<br>    } else {<br>      res5.push(arr[i]);<br>    }<br>  }<br>}<br>fn(arr);</p>
+<p>02.数组去重<br>const arr = [1, 1, ‘1’, 17, true, true, false, false, ‘true’, ‘a’, {}, {}];<br>// =&gt; [1, ‘1’, 17, true, false, ‘true’, ‘a’, {}, {}]</p>
+<p>方法一：利用Set<br>const res1 = Array.from(new Set(arr));</p>
+<p>方法二：两层for循环+splice<br>const unique1 = arr =&gt; {<br>  let len = arr.length;<br>  for (let i = 0; i &lt; len; i++) {<br>    for (let j = i + 1; j &lt; len; j++) {<br>      if (arr[i] === arr[j]) {<br>        arr.splice(j, 1);<br>        // 每删除一个树，j–保证j的值经过自加后不变。同时，len–，减少循环次数提升性能<br>        len–;<br>        j–;<br>      }<br>    }<br>  }<br>  return arr;<br>}</p>
+<p>方法三：利用indexOf<br>const unique2 = arr =&gt; {<br>  const res = [];<br>  for (let i = 0; i &lt; arr.length; i++) {<br>    if (res.indexOf(arr[i]) === -1) res.push(arr[i]);<br>  }<br>  return res;<br>}</p>
+<p>当然也可以用include、filter，思路大同小异。<br>方法四：利用include<br>const unique3 = arr =&gt; {<br>  const res = [];<br>  for (let i = 0; i &lt; arr.length; i++) {<br>    if (!res.includes(arr[i])) res.push(arr[i]);<br>  }<br>  return res;<br>}</p>
+<p>方法五：利用filter<br>const unique4 = arr =&gt; {<br>  return arr.filter((item, index) =&gt; {<br>    return arr.indexOf(item) === index;<br>  });<br>}</p>
+<p>方法六：利用Map<br>const unique5 = arr =&gt; {<br>  const map = new Map();<br>  const res = [];<br>  for (let i = 0; i &lt; arr.length; i++) {<br>    if (!map.has(arr[i])) {<br>      map.set(arr[i], true)<br>      res.push(arr[i]);<br>    }<br>  }<br>  return res;<br>}</p>
+<p>03.类数组转化为数组<br>类数组是具有length属性，但不具有数组原型上的方法。常见的类数组有arguments、DOM操作方法返回的结果。<br>方法一：Array.from<br>Array.from(document.querySelectorAll(‘div’))</p>
+<p>方法二：Array.prototype.slice.call()<br>Array.prototype.slice.call(document.querySelectorAll(‘div’))</p>
+<p>方法三：扩展运算符<br>[…document.querySelectorAll(‘div’)]</p>
+<p>方法四：利用concat<br>Array.prototype.concat.apply([], document.querySelectorAll(‘div’));</p>
+<p>04.Array.prototype.filter()</p>
+<p>Array.prototype.filter = function(callback, thisArg) {<br>  if (this == undefined) {<br>    throw new TypeError(‘this is null or not undefined’);<br>  }<br>  if (typeof callback !== ‘function’) {<br>    throw new TypeError(callback + ‘is not a function’);<br>  }<br>  const res = [];<br>  // 让O成为回调函数的对象传递（强制转换对象）<br>  const O = Object(this);<br>  // &gt;&gt;&gt;0 保证len为number，且为正整数<br>  const len = O.length &gt;&gt;&gt; 0;<br>  for (let i = 0; i &lt; len; i++) {<br>    // 检查i是否在O的属性（会检查原型链）<br>    if (i in O) {<br>      // 回调函数调用传参<br>      if (callback.call(thisArg, O[i], i, O)) {<br>        res.push(O[i]);<br>      }<br>    }<br>  }<br>  return res;<br>}</p>
+<p>对于&gt;&gt;&gt;0有疑问的：解释&gt;&gt;&gt;0的作用<br>05.Array.prototype.map()</p>
+<p>Array.prototype.map = function(callback, thisArg) {<br>  if (this == undefined) {<br>    throw new TypeError(‘this is null or not defined’);<br>  }<br>  if (typeof callback !== ‘function’) {<br>    throw new TypeError(callback + ‘ is not a function’);<br>  }<br>  const res = [];<br>  // 同理<br>  const O = Object(this);<br>  const len = O.length &gt;&gt;&gt; 0;<br>  for (let i = 0; i &lt; len; i++) {<br>    if (i in O) {<br>      // 调用回调函数并传入新数组<br>      res[i] = callback.call(thisArg, O[i], i, this);<br>    }<br>  }<br>  return res;<br>}</p>
+<p>06.Array.prototype.forEach()</p>
+<p>forEach跟map类似，唯一不同的是forEach是没有返回值的。<br>Array.prototype.forEach = function(callback, thisArg) {<br>  if (this == null) {<br>    throw new TypeError(‘this is null or not defined’);<br>  }<br>  if (typeof callback !== “function”) {<br>    throw new TypeError(callback + ‘ is not a function’);<br>  }<br>  const O = Object(this);<br>  const len = O.length &gt;&gt;&gt; 0;<br>  let k = 0;<br>  while (k &lt; len) {<br>    if (k in O) {<br>      callback.call(thisArg, O[k], k, O);<br>    }<br>    k++;<br>  }<br>}</p>
+<p>07.Array.prototype.reduce()</p>
+<p>Array.prototype.reduce = function(callback, initialValue) {<br>  if (this == undefined) {<br>    throw new TypeError(‘this is null or not defined’);<br>  }<br>  if (typeof callback !== ‘function’) {<br>    throw new TypeError(callbackfn + ‘ is not a function’);<br>  }<br>  const O = Object(this);<br>  const len = this.length &gt;&gt;&gt; 0;<br>  let accumulator = initialValue;<br>  let k = 0;<br>  // 如果第二个参数为undefined的情况下<br>  // 则数组的第一个有效值作为累加器的初始值<br>  if (accumulator === undefined) {<br>    while (k &lt; len &amp;&amp; !(k in O)) {<br>      k++;<br>    }<br>    // 如果超出数组界限还没有找到累加器的初始值，则TypeError<br>    if (k &gt;= len) {<br>      throw new TypeError(‘Reduce of empty array with no initial value’);<br>    }<br>    accumulator = O[k++];<br>  }<br>  while (k &lt; len) {<br>    if (k in O) {<br>      accumulator = callback.call(undefined, accumulator, O[k], k, O);<br>    }<br>    k++;<br>  }<br>  return accumulator;<br>}</p>
+<p>08.Function.prototype.apply()<br>第一个参数是绑定的this，默认为window，第二个参数是数组或类数组<br>Function.prototype.apply = function(context = window, args) {<br>  if (typeof this !== ‘function’) {<br>    throw new TypeError(‘Type Error’);<br>  }<br>  const fn = Symbol(‘fn’);<br>  context[fn] = this;</p>
+<p>  const res = context<a href="...args">fn</a>;<br>  delete context[fn];<br>  return res;<br>}</p>
+<p>09.Function.prototype.call<br>于call唯一不同的是，call()方法接受的是一个参数列表<br>Function.prototype.call = function(context = window, …args) {<br>  if (typeof this !== ‘function’) {<br>    throw new TypeError(‘Type Error’);<br>  }<br>  const fn = Symbol(‘fn’);<br>  context[fn] = this;</p>
+<p>  const res = this<a href="...args">fn</a>;<br>  delete this.fn;<br>  return res;<br>}</p>
+<p>10.Function.prototype.bind<br>Function.prototype.bind = function(context, …args) {<br>  if (typeof this !== ‘function’) {<br>    throw new Error(“Type Error”);<br>  }<br>  // 保存this的值<br>  var self = this;</p>
+<p>  return function F() {<br>    // 考虑new的情况<br>    if(this instanceof F) {<br>      return new self(…args, …arguments)<br>    }<br>    return self.apply(context, […args, …arguments])<br>  }<br>}</p>
+<p>11.debounce（防抖）<br>触发高频时间后n秒内函数只会执行一次,如果n秒内高频时间再次触发,则重新计算时间。<br>const debounce = (fn, time) =&gt; {<br>  let timeout = null;<br>  return function() {<br>    clearTimeout(timeout)<br>    timeout = setTimeout(() =&gt; {<br>      fn.apply(this, arguments);<br>    }, time);<br>  }<br>};</p>
+<p>防抖常应用于用户进行搜索输入节约请求资源，window触发resize事件时进行防抖只触发一次。<br>12.throttle（节流）<br>高频时间触发,但n秒内只会执行一次,所以节流会稀释函数的执行频率。<br>const throttle = (fn, time) =&gt; {<br>  let flag = true;<br>  return function() {<br>    if (!flag) return;<br>    flag = false;<br>    setTimeout(() =&gt; {<br>      fn.apply(this, arguments);<br>      flag = true;<br>    }, time);<br>  }<br>}</p>
+<p>节流常应用于鼠标不断点击触发、监听滚动事件。<br>13.函数珂里化</p>
+<p>指的是将一个接受多个参数的函数 变为 接受一个参数返回一个函数的固定形式，这样便于再次调用，例如f(1)(2)</p>
+<p>经典面试题：实现add(1)(2)(3)(4)=10; 、 add(1)(1,2,3)(2)=9;<br>function add() {<br>  const _args = […arguments];<br>  function fn() {<br>    _args.push(…arguments);<br>    return fn;<br>  }<br>  fn.toString = function() {<br>    return _args.reduce((sum, cur) =&gt; sum + cur);<br>  }<br>  return fn;<br>}</p>
+<p>14.模拟new操作<br>3个步骤：</p>
+<p>以ctor.prototype为原型创建一个对象。<br>执行构造函数并将this绑定到新创建的对象上。<br>判断构造函数执行返回的结果是否是引用数据类型，若是则返回构造函数执行的结果，否则返回创建的对象。</p>
+<p>function newOperator(ctor, …args) {<br>  if (typeof ctor !== ‘function’) {<br>    throw new TypeError(‘Type Error’);<br>  }<br>  const obj = Object.create(ctor.prototype);<br>  const res = ctor.apply(obj, args);</p>
+<p>  const isObject = typeof res === ‘object’ &amp;&amp; res !== null;<br>  const isFunction = typeof res === ‘function’;<br>  return isObject || isFunction ? res : obj;<br>}</p>
+<p>15.instanceof<br>instanceof运算符用于检测构造函数的prototype属性是否出现在某个实例对象的原型链上。<br>const myInstanceof = (left, right) =&gt; {<br>  // 基本数据类型都返回false<br>  if (typeof left !== ‘object’ || left === null) return false;<br>  let proto = Object.getPrototypeOf(left);<br>  while (true) {<br>    if (proto === null) return false;<br>    if (proto === right.prototype) return true;<br>    proto = Object.getPrototypeOf(proto);<br>  }<br>}</p>
+<p>16.原型继承<br>这里只写寄生组合继承了，中间还有几个演变过来的继承但都有一些缺陷<br>function Parent5) {<br>  this.name = ‘parent’;<br>}<br>function Child() {<br>  Parent.call(this);<br>  this.type = ‘children’;<br>}<br>Child.prototype = Object.create(Parent.prototype);<br>Child.prototype.constructor = Child;</p>
+<p>17.Object.is<br>Object.is解决的主要是这两个问题：<br>+0 === -0  // true<br>NaN === NaN // false</p>
+<p>const is= (x, y) =&gt; {<br>  if (x === y) {<br>    // +0和-0应该不相等<br>    return x !== 0 || y !== 0 || 1/x === 1/y;<br>  } else {<br>    return x !== x &amp;&amp; y !== y;<br>  }<br>}</p>
+<p>18.Object.assign<br>Object.assign()方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象（请注意这个操作是浅拷贝）<br>Object.defineProperty(Object, ‘assign’, {<br>  value: function(target, …args) {<br>    if (target == null) {<br>      return new TypeError(‘Cannot convert undefined or null to object’);<br>    }</p>
+<pre><code>// 目标对象需要统一是引用数据类型，若不是会自动转换
+const to = Object(target);
+
+for (let i = 0; i &lt; args.length; i++) &#123;
+  // 每一个源对象
+  const nextSource = args[i];
+  if (nextSource !== null) &#123;
+    // 使用for...in和hasOwnProperty双重判断，确保只拿到本身的属性、方法（不包含继承的）
+    for (const nextKey in nextSource) &#123;
+      if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) &#123;
+        to[nextKey] = nextSource[nextKey];
+      &#125;
+    &#125;
+  &#125;
+&#125;
+return to;</code></pre>
+<p>  },<br>  // 不可枚举<br>  enumerable: false,<br>  writable: true,<br>  configurable: true,<br>})</p>
+<p>19.深拷贝<br>递归的完整版本（考虑到了Symbol属性）：<br>const cloneDeep1 = (target, hash = new WeakMap()) =&gt; {<br>  // 对于传入参数处理<br>  if (typeof target !== ‘object’ || target === null) {<br>    return target;<br>  }<br>  // 哈希表中存在直接返回<br>  if (hash.has(target)) return hash.get(target);</p>
+<p>  const cloneTarget = Array.isArray(target) ? [] : {};<br>  hash.set(target, cloneTarget);</p>
+<p>  // 针对Symbol属性<br>  const symKeys = Object.getOwnPropertySymbols(target);<br>  if (symKeys.length) {<br>    symKeys.forEach(symKey =&gt; {<br>      if (typeof target[symKey] === ‘object’ &amp;&amp; target[symKey] !== null) {<br>        cloneTarget[symKey] = cloneDeep1(target[symKey]);<br>      } else {<br>        cloneTarget[symKey] = target[symKey];<br>      }<br>    })<br>  }</p>
+<p>  for (const i in target) {<br>    if (Object.prototype.hasOwnProperty.call(target, i)) {<br>      cloneTarget[i] =<br>        typeof target[i] === ‘object’ &amp;&amp; target[i] !== null<br>        ? cloneDeep1(target[i], hash)<br>        : target[i];<br>    }<br>  }<br>  return cloneTarget;<br>}</p>
+<p>20.Promise<br>实现思路：Promise源码实现<br>const PENDING = ‘PENDING’;      // 进行中<br>const FULFILLED = ‘FULFILLED’;  // 已成功<br>const REJECTED = ‘REJECTED’;    // 已失败</p>
+<p>class Promise {<br>  constructor(exector) {<br>    // 初始化状态<br>    this.status = PENDING;<br>    // 将成功、失败结果放在this上，便于then、catch访问<br>    this.value = undefined;<br>    this.reason = undefined;<br>    // 成功态回调函数队列<br>    this.onFulfilledCallbacks = [];<br>    // 失败态回调函数队列<br>    this.onRejectedCallbacks = [];</p>
+<pre><code>const resolve = value =&gt; &#123;
+  // 只有进行中状态才能更改状态
+  if (this.status === PENDING) &#123;
+    this.status = FULFILLED;
+    this.value = value;
+    // 成功态函数依次执行
+    this.onFulfilledCallbacks.forEach(fn =&gt; fn(this.value));
+  &#125;
+&#125;
+const reject = reason =&gt; &#123;
+  // 只有进行中状态才能更改状态
+  if (this.status === PENDING) &#123;
+    this.status = REJECTED;
+    this.reason = reason;
+    // 失败态函数依次执行
+    this.onRejectedCallbacks.forEach(fn =&gt; fn(this.reason))
+  &#125;
+&#125;
+try &#123;
+  // 立即执行executor
+  // 把内部的resolve和reject传入executor，用户可调用resolve和reject
+  exector(resolve, reject);
+&#125; catch(e) &#123;
+  // executor执行出错，将错误内容reject抛出去
+  reject(e);
+&#125;</code></pre>
+<p>  }<br>  then(onFulfilled, onRejected) {<br>    onFulfilled = typeof onFulfilled === ‘function’ ? onFulfilled : value =&gt; value;<br>    onRejected = typeof onRejected === ‘function’? onRejected:<br>      reason =&gt; { throw new Error(reason instanceof Error ? reason.message:reason) }<br>    // 保存this<br>    const self = this;<br>    return new Promise((resolve, reject) =&gt; {<br>      if (self.status === PENDING) {<br>        self.onFulfilledCallbacks.push(() =&gt; {<br>          // try捕获错误<br>          try {<br>            // 模拟微任务<br>            setTimeout(() =&gt; {<br>              const result = onFulfilled(self.value);<br>              // 分两种情况：<br>              // 1. 回调函数返回值是Promise，执行then操作<br>              // 2. 如果不是Promise，调用新Promise的resolve函数<br>              result instanceof Promise ? result.then(resolve, reject) : resolve(result);<br>            })<br>          } catch(e) {<br>            reject(e);<br>          }<br>        });<br>        self.onRejectedCallbacks.push(() =&gt; {<br>          // 以下同理<br>          try {<br>            setTimeout(() =&gt; {<br>              const result = onRejected(self.reason);<br>              // 不同点：此时是reject<br>              result instanceof Promise ? result.then(resolve, reject) : reject(result);<br>            })<br>          } catch(e) {<br>            reject(e);<br>          }<br>        })<br>      } else if (self.status === FULFILLED) {<br>        try {<br>          setTimeout(() =&gt; {<br>            const result = onFulfilled(self.value);<br>            result instanceof Promise ? result.then(resolve, reject) : resolve(result);<br>          });<br>        } catch(e) {<br>          reject(e);<br>        }<br>      } else if (self.status === REJECTED){<br>        try {<br>          setTimeout(() =&gt; {<br>            const result = onRejected(self.reason);<br>            result instanceof Promise ? result.then(resolve, reject) : reject(result);<br>          })<br>        } catch(e) {<br>          reject(e);<br>        }<br>      }<br>    });<br>  }<br>  catch(onRejected) {<br>    return this.then(null, onRejected);<br>  }<br>  static resolve(value) {<br>    if (value instanceof Promise) {<br>      // 如果是Promise实例，直接返回<br>      return value;<br>    } else {<br>      // 如果不是Promise实例，返回一个新的Promise对象，状态为FULFILLED<br>      return new Promise((resolve, reject) =&gt; resolve(value));<br>    }<br>  }<br>  static reject(reason) {<br>    return new Promise((resolve, reject) =&gt; {<br>      reject(reason);<br>    })<br>  }<br>}</p>
+<p>21.Promise.all<br>Promise.all是支持链式调用的，本质上就是返回了一个Promise实例，通过resolve和reject来改变实例状态。<br>Promise.myAll = function(promiseArr) {<br>  return new Promise((resolve, reject) =&gt; {<br>    const ans = [];<br>    let index = 0;<br>    for (let i = 0; i &lt; promiseArr.length; i++) {<br>      promiseArr[i]<br>      .then(res =&gt; {<br>        ans[i] = res;<br>        index++;<br>        if (index === promiseArr.length) {<br>          resolve(ans);<br>        }<br>      })<br>      .catch(err =&gt; reject(err));<br>    }<br>  })<br>}</p>
+<p>22.Promise.race<br>Promise.race = function(promiseArr) {<br>  return new Promise((resolve, reject) =&gt; {<br>    promiseArr.forEach(p =&gt; {<br>      // 如果不是Promise实例需要转化为Promise实例<br>      Promise.resolve(p).then(<br>        val =&gt; resolve(val),<br>        err =&gt; reject(err),<br>      )<br>    })<br>  })<br>}</p>
+<p>23.Promise并行限制<br>就是实现有并行限制的Promise调度器问题。<br>详细实现思路：某条高频面试原题：实现有并行限制的Promise调度器<br>class Scheduler {<br>  constructor() {<br>    this.queue = [];<br>    this.maxCount = 2;<br>    this.runCounts = 0;<br>  }<br>  add(promiseCreator) {<br>    this.queue.push(promiseCreator);<br>  }<br>  taskStart() {<br>    for (let i = 0; i &lt; this.maxCount; i++) {<br>      this.request();<br>    }<br>  }<br>  request() {<br>    if (!this.queue || !this.queue.length || this.runCounts &gt;= this.maxCount) {<br>      return;<br>    }<br>    this.runCounts++;</p>
+<pre><code>this.queue.shift()().then(() =&gt; &#123;
+  this.runCounts--;
+  this.request();
+&#125;);</code></pre>
+<p>  }<br>}</p>
+<p>const timeout = time =&gt; new Promise(resolve =&gt; {<br>  setTimeout(resolve, time);<br>})</p>
+<p>const scheduler = new Scheduler();</p>
+<p>const addTask = (time,order) =&gt; {<br>  scheduler.add(() =&gt; timeout(time).then(()=&gt;console.log(order)))<br>}</p>
+<p>addTask(1000, ‘1’);<br>addTask(500, ‘2’);<br>addTask(300, ‘3’);<br>addTask(400, ‘4’);<br>scheduler.taskStart()<br>// 2<br>// 3<br>// 1<br>// 4</p>
+<p>24.JSONP<br>script标签不遵循同源协议，可以用来进行跨域请求，优点就是兼容性好但仅限于GET请求<br>const jsonp = ({ url, params, callbackName }) =&gt; {<br>  const generateUrl = () =&gt; {<br>    let dataSrc = ‘’;<br>    for (let key in params) {<br>      if (Object.prototype.hasOwnProperty.call(params, key)) {<br>        dataSrc += <code>$&#123;key&#125;=$&#123;params[key]&#125;&amp;</code>;<br>      }<br>    }<br>    dataSrc += <code>callback=$&#123;callbackName&#125;</code>;<br>    return <code>$&#123;url&#125;?$&#123;dataSrc&#125;</code>;<br>  }<br>  return new Promise((resolve, reject) =&gt; {<br>    const scriptEle = document.createElement(‘script’);<br>    scriptEle.src = generateUrl();<br>    document.body.appendChild(scriptEle);<br>    window[callbackName] = data =&gt; {<br>      resolve(data);<br>      document.removeChild(scriptEle);<br>    }<br>  })<br>}</p>
+<p>25.AJAX<br>const getJSON = function(url) {<br>  return new Promise((resolve, reject) =&gt; {<br>    const xhr = XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject(‘Mscrosoft.XMLHttp’);<br>    xhr.open(‘GET’, url, false);<br>    xhr.setRequestHeader(‘Accept’, ‘application/json’);<br>    xhr.onreadystatechange = function() {<br>      if (xhr.readyState !== 4) return;<br>      if (xhr.status === 200 || xhr.status === 304) {<br>        resolve(xhr.responseText);<br>      } else {<br>        reject(new Error(xhr.responseText));<br>      }<br>    }<br>    xhr.send();<br>  })<br>}</p>
+<p>26.event模块<br>实现node中回调函数的机制，node中回调函数其实是内部使用了观察者模式。</p>
+<p>观察者模式：定义了对象间一种一对多的依赖关系，当目标对象Subject发生改变时，所有依赖它的对象Observer都会得到通知。</p>
+<p>function EventEmitter() {<br>  this.events = new Map();<br>}</p>
+<p>// 需要实现的一些方法：<br>// addListener、removeListener、once、removeAllListeners、emit</p>
+<p>// 模拟实现addlistener方法<br>const wrapCallback = (fn, once = false) =&gt; ({ callback: fn, once });<br>EventEmitter.prototype.addListener = function(type, fn, once = false) {<br>  const hanlder = this.events.get(type);<br>  if (!hanlder) {<br>    // 没有type绑定事件<br>    this.events.set(type, wrapCallback(fn, once));<br>  } else if (hanlder &amp;&amp; typeof hanlder.callback === ‘function’) {<br>    // 目前type事件只有一个回调<br>    this.events.set(type, [hanlder, wrapCallback(fn, once)]);<br>  } else {<br>    // 目前type事件数&gt;=2<br>    hanlder.push(wrapCallback(fn, once));<br>  }<br>}<br>// 模拟实现removeListener<br>EventEmitter.prototype.removeListener = function(type, listener) {<br>  const hanlder = this.events.get(type);<br>  if (!hanlder) return;<br>  if (!Array.isArray(this.events)) {<br>    if (hanlder.callback === listener.callback) this.events.delete(type);<br>    else return;<br>  }<br>  for (let i = 0; i &lt; hanlder.length; i++) {<br>    const item = hanlder[i];<br>    if (item.callback === listener.callback) {<br>      hanlder.splice(i, 1);<br>      i–;<br>      if (hanlder.length === 1) {<br>        this.events.set(type, hanlder[0]);<br>      }<br>    }<br>  }<br>}<br>// 模拟实现once方法<br>EventEmitter.prototype.once = function(type, listener) {<br>  this.addListener(type, listener, true);<br>}<br>// 模拟实现emit方法<br>EventEmitter.prototype.emit = function(type, …args) {<br>  const hanlder = this.events.get(type);<br>  if (!hanlder) return;<br>  if (Array.isArray(hanlder)) {<br>    hanlder.forEach(item =&gt; {<br>      item.callback.apply(this, args);<br>      if (item.once) {<br>        this.removeListener(type, item);<br>      }<br>    })<br>  } else {<br>    hanlder.callback.apply(this, args);<br>    if (hanlder.once) {<br>      this.events.delete(type);<br>    }<br>  }<br>  return true;<br>}<br>EventEmitter.prototype.removeAllListeners = function(type) {<br>  const hanlder = this.events.get(type);<br>  if (!hanlder) return;<br>  this.events.delete(type);<br>}</p>
+<p>27.图片懒加载<br>可以给img标签统一自定义属性data-src=’default.png’，当检测到图片出现在窗口之后再补充src属性，此时才会进行图片资源加载。<br>function lazyload() {<br>  const imgs = document.getElementsByTagName(‘img’);<br>  const len = imgs.length;<br>  // 视口的高度<br>  const viewHeight = document.documentElement.clientHeight;<br>  // 滚动条高度<br>  const scrollHeight = document.documentElement.scrollTop || document.body.scrollTop;<br>  for (let i = 0; i &lt; len; i++) {<br>    const offsetHeight = imgs[i].offsetTop;<br>    if (offsetHeight &lt; viewHeight + scrollHeight) {<br>      const src = imgs[i].dataset.src;<br>      imgs[i].src = src;<br>    }<br>  }<br>}</p>
+<p>// 可以使用节流优化一下<br>window.addEventListener(‘scroll’, lazyload);</p>
+<p>28.滚动加载<br>原理就是监听页面滚动事件，分析clientHeight、scrollTop、scrollHeight三者的属性关系。<br>window.addEventListener(‘scroll’, function() {<br>  const clientHeight = document.documentElement.clientHeight;<br>  const scrollTop = document.documentElement.scrollTop;<br>  const scrollHeight = document.documentElement.scrollHeight;<br>  if (clientHeight + scrollTop &gt;= scrollHeight) {<br>    // 检测到滚动至页面底部，进行后续操作<br>    // …<br>  }<br>}, false);</p>
+<p>一个Demo：页面滚动加载的Demo<br>29.渲染几万条数据不卡住页面<br>渲染大数据时，合理使用createDocumentFragment和requestAnimationFrame，将操作切分为一小段一小段执行。<br>setTimeout(() =&gt; {<br>  // 插入十万条数据<br>  const total = 100000;<br>  // 一次插入的数据<br>  const once = 20;<br>  // 插入数据需要的次数<br>  const loopCount = Math.ceil(total / once);<br>  let countOfRender = 0;<br>  const ul = document.querySelector(‘ul’);<br>  // 添加数据的方法<br>  function add() {<br>    const fragment = document.createDocumentFragment();<br>    for(let i = 0; i &lt; once; i++) {<br>      const li = document.createElement(‘li’);<br>      li.innerText = Math.floor(Math.random() * total);<br>      fragment.appendChild(li);<br>    }<br>    ul.appendChild(fragment);<br>    countOfRender += 1;<br>    loop();<br>  }<br>  function loop() {<br>    if(countOfRender &lt; loopCount) {<br>      window.requestAnimationFrame(add);<br>    }<br>  }<br>  loop();<br>}, 0)</p>
+<p>30.打印出当前网页使用了多少种HTML元素<br>一行代码可以解决：<br>const fn = () =&gt; {<br>  return […new Set([…document.querySelectorAll(‘*’)].map(el =&gt; el.tagName))].length;<br>}</p>
+<p>值得注意的是：DOM操作返回的是类数组，需要转换为数组之后才可以调用数组的方法。<br>31.将VirtualDom转化为真实DOM结构<br>这是当前SPA应用的核心概念之一<br>// vnode结构：<br>// {<br>//   tag,<br>//   attrs,<br>//   children,<br>// }</p>
+<p>//Virtual DOM =&gt; DOM<br>function render(vnode, container) {<br>  container.appendChild(_render(vnode));<br>}<br>function _render(vnode) {<br>  // 如果是数字类型转化为字符串<br>  if (typeof vnode === ‘number’) {<br>    vnode = String(vnode);<br>  }<br>  // 字符串类型直接就是文本节点<br>  if (typeof vnode === ‘string’) {<br>    return document.createTextNode(vnode);<br>  }<br>  // 普通DOM<br>  const dom = document.createElement(vnode.tag);<br>  if (vnode.attrs) {<br>    // 遍历属性<br>    Object.keys(vnode.attrs).forEach(key =&gt; {<br>      const value = vnode.attrs[key];<br>      dom.setAttribute(key, value);<br>    })<br>  }<br>  // 子数组进行递归操作<br>  vnode.children.forEach(child =&gt; render(child, dom));<br>  return dom;<br>}</p>
+<p>32.字符串解析问题<br>var a = {<br>    b: 123,<br>    c: ‘456’,<br>    e: ‘789’,<br>}<br>var str=<code>a&#123;a.b&#125;aa&#123;a.c&#125;aa &#123;a.d&#125;aaaa</code>;<br>// =&gt; ‘a123aa456aa {a.d}aaaa’</p>
+<p>实现函数使得将str字符串中的{}内的变量替换，如果属性不存在保持原样（比如{a.d}）<br>类似于模版字符串，但有一点出入，实际上原理大差不差<br>const fn1 = (str, obj) =&gt; {<br>    let res = ‘’;<br>    // 标志位，标志前面是否有{<br>    let flag = false;<br>    let start;<br>    for (let i = 0; i &lt; str.length; i++) {<br>        if (str[i] === ‘{‘) {<br>            flag = true;<br>            start = i + 1;<br>            continue;<br>        }<br>        if (!flag) res += str[i];<br>        else {<br>            if (str[i] === ‘}’) {<br>                flag = false;<br>                res += match(str.slice(start, i), obj);<br>            }<br>        }<br>    }<br>    return res;<br>}<br>// 对象匹配操作<br>const match = (str, obj) =&gt; {<br>    const keys = str.split(‘.’).slice(1);<br>    let index = 0;<br>    let o = obj;<br>    while (index &lt; keys.length) {<br>        const key = keys[index];<br>        if (!o[key]) {<br>            return <code>&#123;$&#123;str&#125;&#125;</code>;<br>        } else {<br>            o = o[key];<br>        }<br>        index++;<br>    }<br>    return o;<br>}</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/program/">program</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/09/21/excel%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F/">
+                        <span class="hidden-mobile">excel常用公式</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+  <div>
+  <center>
+  <span id="timeDate">载入天数...</span>
+  <span id="times">载入时分秒...</span>
+  </center>
+  <script>
+  var now = new Date();
+  function createtime(){
+      var grt= new Date("09/18/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  </script>
+</div>
+
+<center><p id="hitokoto">:D 获取中...</p></center>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto')
+      hitokoto.innerText = data.hitokoto
+      })
+      .catch(console.error)
+</script>
+
+</footer>
+
+
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "32个js问题&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

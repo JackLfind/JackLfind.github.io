@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="JackLfind">
+  <meta name="keywords" content="">
+  <title>excel常用公式 - sky</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Sky</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-09-21 20:18" pubdate>
+        2020年9月21日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">excel常用公式</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <p>1、IF函数条件判断<br>IF函数是最常用的判断类函数之一，能完成非此即彼的判断。<br>如下图，考核得分的标准为9分，要判断B列的考核成绩是否合格。<br>=IF(B4&gt;=9,”合格”,”不合格”)</p>
+<p>IF，相当于普通话的“如果”，常规用法是：<br>IF(判断的条件,符合条件时的结果,不符合条件时的结果)</p>
+<p>2、多条件判断<br>如下图所示，如果部门为生产、岗位为主操 有高温补助。在D列使用公式：<br>=IF(AND(B2=”生产”,C2=”主操”),”有”,”无”)</p>
+<p>AND函数对两个条件判断，如果同时符合，IF函数返回“有”，否则为无。</p>
+<p>3、条件求和<br>如下图所示，使用SUMIF函数计算一班的总成绩：<br>=SUMIF(D2:D5,F2,C2:C5)</p>
+<p>SUMIF用法是：<br>=SUMIF(条件区域,指定的求和条件,求和的区域)<br>用通俗的话描述就是：<br>如果D2:D5区域的班级等于F2单元格的“一班”，就对C2:C5单元格对应的区域求和。</p>
+<p>4、多条件求和<br>如下图所示，要统计部门为生产,并且岗位为主操的补助总额。<br>公式为：<br>=SUMIFS(D2:D9,B2:B9,F2,C2:C9,G2)</p>
+<p>SUMIFS用法是：<br>=SUMIFS(求和的区域，条件区域1,指定的求和条件1,条件区域2,指定的求和条件2,……)</p>
+<p>5、条件计数<br>如下图，要统计指定店铺的业务笔数。也就是统计B列中有多少个指定的店铺名称。<br>=COUNTIF(B2:B12,E3)</p>
+<p>COUNTIF函数统计条件区域中，符合指定条件的单元格个数。常规用法为：<br>=COUNTIF(条件区域,指定条件)</p>
+<p>6、多条件计数<br>要求：统计统计部门为生产,并且岗位为主操的人数<br>公式为：<br>=COUNTIFS(B2:B9,F2,C2:C9,G2)</p>
+<p>COUNTIFS函数统计条件区域中，符合多个指定条件的单元格个数。常规用法为：<br>=COUNTIFS(条件区域1,指定条件1,条件区域2,指定条件2……)</p>
+<p>7、条件查找<br>VLOOKUP函数一直是大众情人般的存在，函数的语法为：<br>VLOOKUP(要找谁,在哪儿找,返回第几列的内容,精确找还是近似找)<br>如下图，要查询F5单元格中的员工姓名是什么职务。<br>=VLOOKUP($F$5,$B$1:$D$10,2,0)</p>
+<p>使用该函数时，需要注意以下几点：<br>1、第4参数一般用0（或FASLE）以精确匹配方式进行查找。<br>2、第3参数中的列号，不能理解为工作表中实际的列号，而是指定返回值在查找范围中的第几列。<br>3、如果查找值与数据区域关键字的数据类型不一致，会返回错误值#N/A。<br>4、查找值必须位于查询区域中的第一列。</p>
+<p>8、多条件查找<br>如下图所示，要求查询部门为生产,并且岗位为部长的姓名。<br>公式为：<br>=LOOKUP(1,0/((B2:B9=F2)*(C2:C9=G2)),A2:A9)</p>
+<p>LOOKUP函数多条件查询写法为：<br>=LOOKUP(1,0/((条件区域1=条件1)*(条件区域2=条件2)),查询区域)</p>
+<p>9、计算文本算式<br>如下图，要计算单元格中的文本算式，先单击第一个要输入公式的单元格，定义名称 ：<br>计算 = EVALUATE(C2)<br>然后在单元格中输入公式：<br>=计算</p>
+<p>10、合并多个单元格内容<br>要连接合并多个单元格中的内容，可以使用&amp;符号完成。如下图，要合并A列的姓名和B列的电话号码，可以使用公式：<br>=A2&amp;B$1&amp;B2</p>
+<p>11、合并带格式的单元格内容<br>合并带有格式的内容时，Excel默认按常规格式进行合并，但是如果是日期、时间或是其他有格式的数值，结果就会让人大失所望了：</p>
+<p>如何才能正确连接出需要的字符串呢？其实很简单，C2公式为：<br>=A2&amp;TEXT(B2,” y年m月d日”)</p>
+<p>首先使用TEXT函数，把B列的日期变成具有特定样式的字符串，然后再与A列的姓名连接，就变成了最终需要的样式。</p>
+<p>12、比较大小写的单词是否相同<br>如果在A1和A2单元格中分别输入大小写的单词，使用以下公式判断时，Excel会默认二者是相同的：<br>=A2=B2</p>
+<p>如需区别大小写，可以使用公式：<br>=EXACT(A2,B2)<br>EXACT函数 区分大小写，但忽略格式上的差异。</p>
+<p>13、提取混合内容中的姓名<br>如下图，要从A列姓名电话中提取出姓名，除了使用高版本的自动填充功能，还可以使用公式完成：<br>=LEFT(A2,LENB(A2)-LEN(A2))</p>
+<p>LENB函数将每个汉字（双字节字符）的字符数按2计数，LEN函数则对所有的字符都按1计数。因此“LENB(A2)-LEN(A2)”返回的结果就是文本字符串中的汉字个数。<br>LEFT函数从文本字符串的第一个字符开始，返回指定个数的字符，最终提取出员工姓名。</p>
+<p>14、根据身份证号码提取出生年月<br>计算公式为：<br>=1*TEXT(MID(B2,7,8),”0-00-00”)</p>
+<p>首先使用MID函数从B2单元格的第7位开始，提取出表示出生年月的8个字符，结果为：<br>“19780215”<br>再使用TEXT函数将字符串转换为日期样式：<br>“1978-02-15”<br>然后通过*1计算，将其转换为真正的日期。最后设置为日期格式即可。</p>
+<p>15、替换部分电话号码<br>如下图所示，要将手机号码的中间四位换成星号，公式为：<br>=SUBSTITUTE(B2,MID(B2,4,4),”****”,1)</p>
+<p>SUBSTITUTE函数的用法是：<br>SUBSTITUTE(要替换的文本,旧文本,新文本,[替换第几个])<br>先使用MID函数取得B列号码中的中间4位，再用“*****”替换掉这部分内容。<br>最后一个参数使用1，表示只替换第一次出现的内容。比如第九行的电话号码是13801010101，最后四位和中间四位相同，如果不指定1，就会全部替换掉了。</p>
+<p>16、屏蔽函数公式返回的错误值<br>在使用函数公式过程中，经常会返回一些诸如#N/A、#NAME?之类的错误值，要屏蔽这些错误值其实很简单，只需在原公式外侧加上一个IFERROR函数就好。<br>IFERROR函数的用法为：<br>=IFERROR(原公式,出现错误时要返回的内容)<br>如果公式正确，就返回原有计算结果，如果公式返回的是错误值，就返回用户指定的显示内容。</p>
+<p>17、四舍五入函数<br>ROUND函数这个想必大家经常用到吧，就是对数值按指定的位数四舍五入。比如：<br>=ROUND(8/9,3)<br>就是将8/9的计算结果四舍五入到三位小数，结果为0.889。</p>
+<p>18、取整的间隔小时数<br>计算两个时间的间隔小时数，不足一小时部分舍去，计算加班时经常会用到，说多了都是泪……<br>=TEXT(B2-B1,”[h]”)</p>
+<p>19、提取日期时间中的日期值<br>要从日期时间数据中提取出日期，可以使用以下公式：<br>=INT(A2)<br>要继续提取时间，只需要做个减法，就欧了：</p>
+<p>20、生成随机数<br>RANDBETWEEN能够在指定范围内生成一组随机数据，对于广大质检、监理、统计人员来说，这的确是一个伟大的函数。<br>函数的用法是：<br>=RANDBETWEEN(数字下限,数字上限)<br>比如以下公式，就是生成60到100之间的随机数：<br>=RANDBETWEEN(60,100)</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/useful/">useful</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/09/22/32%E4%B8%AAjs%E9%97%AE%E9%A2%98/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">32个js问题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/09/20/a/">
+                        <span class="hidden-mobile">vue3傻瓜式入门</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+  <div>
+  <center>
+  <span id="timeDate">载入天数...</span>
+  <span id="times">载入时分秒...</span>
+  </center>
+  <script>
+  var now = new Date();
+  function createtime(){
+      var grt= new Date("09/18/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+      now.setTime(now.getTime()+250);
+      days = (now - grt ) / 1000 / 60 / 60 / 24;
+      dnum = Math.floor(days);
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+      hnum = Math.floor(hours);
+      if(String(hnum).length ==1 ){
+          hnum = "0" + hnum;
+      }
+      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+      mnum = Math.floor(minutes);
+      if(String(mnum).length ==1 ){
+                mnum = "0" + mnum;
+      }
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+      snum = Math.round(seconds);
+      if(String(snum).length ==1 ){
+                snum = "0" + snum;
+      }
+      document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";
+      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+  }
+  setInterval("createtime()",250);
+  </script>
+</div>
+
+<center><p id="hitokoto">:D 获取中...</p></center>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto')
+      hitokoto.innerText = data.hitokoto
+      })
+      .catch(console.error)
+</script>
+
+</footer>
+
+
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "excel常用公式&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
